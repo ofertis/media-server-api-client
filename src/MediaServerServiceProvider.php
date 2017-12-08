@@ -30,8 +30,13 @@ class MediaServerServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom( __DIR__.'/../config/media-server.php', 'media-server');
 
-        $this->app->singleton('MediaServer', function (Application $app) {
+        $this->app->singleton('mediaserver', function (Application $app) {
             return new MediaServer($app->make('config')->get('media-server'));
         });
+    }
+
+    public function provides()
+    {
+        return ['mediaserver'];
     }
 }

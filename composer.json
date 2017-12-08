@@ -22,7 +22,7 @@
         "Ofertis\\MediaServer\\MediaServerServiceProvider"
       ],
       "aliases": {
-        "Bar": "Ofertis\\MediaServer\\MediaServerFacade"
+        "mediaserver": "Ofertis\\MediaServer\\MediaServerFacade"
       }
     }
   }
