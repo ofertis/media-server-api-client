@@ -1,0 +1,29 @@
+{
+  "name": "ofertis/media-server-api-client",
+  "description": "Library to interface with ofertis/media-server",
+  "type": "package",
+  "authors": [
+    {
+      "name": "Zbyněk Mrozek",
+      "email": "zbynek.mrozek@ofertis.cz"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ofertis\\MediaServer\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ofertis\\MediaServer\\MediaServerServiceProvider"
+      ],
+      "aliases": {
+        "Bar": "Ofertis\\MediaServer\\MediaServerFacade"
+      }
+    }
+  }
+}
