@@ -13,7 +13,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Ofertis\\MediaServer\\": "src/"
+      "Ofertis\\MediaServer\\": "src"
     }
   },
   "extra": {

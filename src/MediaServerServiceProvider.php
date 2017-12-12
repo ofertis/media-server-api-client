@@ -17,7 +17,7 @@ class MediaServerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/media-server.php' => config_path('media-server.php'),
+            __DIR__ . '/../config/media-server.php' => config_path('media-server.php'),
         ]);
     }
 
@@ -28,7 +28,7 @@ class MediaServerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom( __DIR__.'/../config/media-server.php', 'media-server');
+        $this->mergeConfigFrom( __DIR__ . '/../config/media-server.php', 'media-server');
 
         $this->app->singleton('mediaserver', function (Application $app) {
             return new MediaServer($app->make('config')->get('media-server'));
