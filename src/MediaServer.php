@@ -73,7 +73,7 @@ class MediaServer
             $action = '_' . $action;
         }
         // Create OUTPUT
-        return sprintf($this->config['uri'] . DIRECTORY_SEPARATOR . $file[0] . '%s%s.' . $file[1], $axes, $action);
+        return $this->getLink(sprintf($file[0] . '%s%s.' . $file[1], $axes, $action));
     }
 
     /**
@@ -113,7 +113,7 @@ class MediaServer
             $items = [];
             foreach($mediaPath AS $key => $item)
             {
-                if($contents = file_get_contents($this->config['uri'] . DIRECTORY_SEPARATOR . $item))
+                if($contents = file_get_contents($this->getLink($item)))
                 {
                     $items[$key] = $contents;
                 };
@@ -123,7 +123,11 @@ class MediaServer
         }
         else
         {
-            return file_get_contents($this->config['uri'] . DIRECTORY_SEPARATOR . $mediaPath);
+            return file_get_contents($this->getLink($mediaPath));
         }
+    }
+
+    public function getLink($mediaPath){
+        return $this->config['uri'] . DIRECTORY_SEPARATOR . $mediaPath;
     }
 }
